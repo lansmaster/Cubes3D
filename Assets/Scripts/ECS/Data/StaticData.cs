@@ -1,8 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu]
-public class StaticData : ScriptableObject
+public class StaticData : MonoBehaviour
 {
-    public GameObject cubePrefab;
-    public float cubeSpeed;
+    public CubeData CubeData;
 }

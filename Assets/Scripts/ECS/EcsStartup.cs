@@ -3,7 +3,7 @@ using UnityEngine;
 
 public sealed class EcsStartup : MonoBehaviour
 {
-    public StaticData configuration;
+    [SerializeField] public StaticData configuration;
     public SceneData sceneData;
 
     private EcsWorld world;

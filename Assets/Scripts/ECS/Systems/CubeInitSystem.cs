@@ -12,11 +12,11 @@ sealed class CubeInitSystem : IEcsInitSystem
     {
         var cubeEntity = _world.NewEntity();
 
-        ref var cube = ref cubeEntity.Get<CubeData>();
+        ref var cube = ref cubeEntity.Get<CubeDataComponent>();
         cubeEntity.Get<InputComponent>();
 
-        GameObject cubeGameObject = Object.Instantiate(staticData.cubePrefab, sceneData.transform.position, Quaternion.identity);
-        cube.cubeSpeed = staticData.cubeSpeed;
+        GameObject cubeGameObject = Object.Instantiate(staticData.CubeData.cubePrefab, sceneData.cubeSpawnPoint.position, Quaternion.identity);
+        cube.cubeSpeed = staticData.CubeData.cubeSpeed;
         cube.rigidbody = cubeGameObject.GetComponent<Rigidbody>();
     }
 }

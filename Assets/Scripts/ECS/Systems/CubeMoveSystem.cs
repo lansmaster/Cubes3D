@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CubeMoveSystem : IEcsRunSystem
 {
-    private EcsFilter<CubeData, InputComponent> _filter;
+    private EcsFilter<CubeDataComponent, InputComponent> _filter;
 
     public void Run()
     {
