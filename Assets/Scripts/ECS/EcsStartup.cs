@@ -37,7 +37,9 @@ public sealed class EcsStartup : MonoBehaviour
     {
         updateSystems.
             Add(new CubeInitSystem()).
-            Add(new InputSystem());
+            Add(new PlanesInitSystem()).
+            Add(new InputSystem()).
+            Add(new PlaneColorSystem());
 
         fixedUpdateSystems.
             Add(new CubeMoveSystem());

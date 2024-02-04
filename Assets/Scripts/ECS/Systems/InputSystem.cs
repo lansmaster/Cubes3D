@@ -1,9 +1,9 @@
 using Leopotam.Ecs;
 using UnityEngine;
 
-public class InputSystem : IEcsRunSystem
+sealed class InputSystem : IEcsRunSystem
 {
-    private EcsFilter<InputComponent> _filter;
+    private readonly EcsFilter<InputComponent> _filter;
 
     public void Run()
     {

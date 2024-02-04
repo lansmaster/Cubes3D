@@ -1,9 +1,9 @@
 ﻿using Leopotam.Ecs;
 using UnityEngine;
 
-public class CubeMoveSystem : IEcsRunSystem
+sealed class CubeMoveSystem : IEcsRunSystem
 {
-    private EcsFilter<CubeDataComponent, InputComponent> _filter;
+    private readonly EcsFilter<CubeDataComponent, InputComponent> _filter;
 
     public void Run()
     {
