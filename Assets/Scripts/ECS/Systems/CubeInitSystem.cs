@@ -7,7 +7,6 @@ sealed class CubeInitSystem : IEcsInitSystem
     private StaticData staticData;
     private SceneData sceneData;
 
-
     public void Init()
     {
         var cubeEntity = _world.NewEntity();
@@ -16,7 +15,6 @@ sealed class CubeInitSystem : IEcsInitSystem
         cubeEntity.Get<InputComponent>();
 
         GameObject cubeGameObject = Object.Instantiate(staticData.CubeData.cubePrefab, sceneData.cubeSpawnPoint.position, Quaternion.identity);
-        cube.cubeSpeed = staticData.CubeData.cubeSpeed;
-        cube.rigidbody = cubeGameObject.GetComponent<Rigidbody>();
+        cube.transform = cubeGameObject.transform;
     }
 }

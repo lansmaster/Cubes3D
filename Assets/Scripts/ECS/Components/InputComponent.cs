@@ -2,5 +2,5 @@ using UnityEngine;
 
 internal struct InputComponent
 {
-    public Vector3 direction;
+    public Vector3 inputPosition;
 }

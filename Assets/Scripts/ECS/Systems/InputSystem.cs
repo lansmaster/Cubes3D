@@ -10,8 +10,6 @@ sealed class InputSystem : IEcsRunSystem
         foreach (var i in _filter)
         {
             ref var input = ref _filter.Get1(i);
-
-            input.direction = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
         }
     }
 }

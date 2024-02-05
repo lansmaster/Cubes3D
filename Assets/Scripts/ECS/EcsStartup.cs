@@ -6,11 +6,11 @@ public sealed class EcsStartup : MonoBehaviour
     [SerializeField] public StaticData configuration;
     public SceneData sceneData;
 
-    private EcsWorld world;
+    public static EcsWorld world;
     private EcsSystems updateSystems;
     private EcsSystems fixedUpdateSystems;
 
-    private void Start()
+    private void Awake()
     {
         world = new EcsWorld();
         updateSystems = new EcsSystems(world);
@@ -37,7 +37,6 @@ public sealed class EcsStartup : MonoBehaviour
     {
         updateSystems.
             Add(new CubeInitSystem()).
-            Add(new PlanesInitSystem()).
             Add(new InputSystem()).
             Add(new PlaneColorSystem());
 

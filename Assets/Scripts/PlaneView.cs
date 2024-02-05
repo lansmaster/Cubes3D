@@ -3,17 +3,21 @@ using UnityEngine;
 
 public class PlaneView : MonoBehaviour
 {
-    private EcsWorld _world;
-    public EcsEntity planeEntity;
+    public EcsEntity entity;
 
     private void Start()
     {
-        planeEntity = _world.NewEntity();
+        SetEntity();
     }
 
-    private void OnMouseDown()
+    private void SetEntity()
     {
-        planeEntity.Get<PlaneDataComponent>();
+        entity = EcsStartup.world.NewEntity();
+        ref var plane = ref entity.Get<PlaneDataComponent>();
+        plane.transform = GetComponent<Transform>();
+        plane.meshRenderer = GetComponent<MeshRenderer>();
+        plane.defaultMaterial = plane.meshRenderer.materials[0];
+        plane.emissionMaterial = plane.meshRenderer.materials[1];
     }
 
     //private MeshRenderer _meshRenderer;
