@@ -2,9 +2,9 @@ using Leopotam.Ecs;
 
 sealed class PlaneColorSystem : IEcsRunSystem
 {
-    private readonly EcsFilter<PlaneDataComponent, IsAccessiblePlane> _accessiblePlanesFilter;
+    private readonly EcsFilter<PlaneDataComponent, IsAccessiblePlane> _accessiblePlanesFilter = null;
 
-    private readonly EcsFilter<PlaneDataComponent>.Exclude<IsAccessiblePlane> _otherPlanesFilter;
+    private readonly EcsFilter<PlaneDataComponent>.Exclude<IsAccessiblePlane> _otherPlanesFilter = null;
 
     public void Run()
     {
