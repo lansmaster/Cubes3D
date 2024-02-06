@@ -15,5 +15,7 @@ sealed class CubeInitSystem : IEcsInitSystem
 
         GameObject cubeGameObject = Object.Instantiate(staticData.CubeData.cubePrefab, sceneData.cubeSpawnPoint.position, Quaternion.identity);
         cube.transform = cubeGameObject.transform;
+
+        cubeGameObject.GetComponent<CubeView>().entity = cubeEntity;
     }
 }

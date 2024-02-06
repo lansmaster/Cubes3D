@@ -25,20 +25,18 @@ public sealed class EcsStartup : MonoBehaviour
 
     private void AddInjections()
     {
-        RuntimeData runtimeData = new RuntimeData();
-
         updateSystems.
             Inject(configuration).
-            Inject(sceneData).
-            Inject(runtimeData);
+            Inject(sceneData);
     }
 
     private void AddSystems()
     {
         updateSystems.
             Add(new CubeInitSystem()).
-            Add(new CubeMoveSystem()).
-            Add(new PlaneColorSystem());
+            Add(new PlanesDetectorSystem()).
+            Add(new PlaneColorSystem()).
+            Add(new CubeMoveSystem());
     }
 
     private void Update()

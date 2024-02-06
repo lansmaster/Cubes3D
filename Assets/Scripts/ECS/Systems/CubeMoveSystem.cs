@@ -3,8 +3,8 @@ using UnityEngine;
 
 sealed class CubeMoveSystem : IEcsRunSystem
 {
-    private readonly EcsFilter<InputComponent> _inputFilter = null;
-    private readonly EcsFilter<CubeDataComponent> _cubeFilter = null;
+    private readonly EcsFilter<InputComponent, IsAccessiblePlane> _inputFilter = null;
+    private readonly EcsFilter<CubeDataComponent, IsActiveCube> _cubeFilter = null;
 
     public void Run()
     {
@@ -15,11 +15,19 @@ sealed class CubeMoveSystem : IEcsRunSystem
 
             foreach (var j in _cubeFilter)
             {
-                ref var cube = ref _cubeFilter.Get1(i);
+                ref var cube = ref _cubeFilter.Get1(j);
 
                 cube.transform.position = new Vector3(input.inputPosition.x, cube.transform.position.y, input.inputPosition.z);
-            }
 
+                foreach (var plane in cube.accessiblePlanes)
+                {
+                    if (plane.gameObject.TryGetComponent(out PlaneView planeView))
+                    {
+                        planeView.entity.Del<IsAccessiblePlane>();
+                    }
+                }
+            }
+            
             entity.Del<InputComponent>();
         }
     }

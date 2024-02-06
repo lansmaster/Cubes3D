@@ -12,9 +12,7 @@ public class PlaneView : MonoBehaviour
 
     private void OnMouseDown()
     {
-        var inpupEntity = EcsStartup.world.NewEntity();
-
-        inpupEntity.Get<InputComponent>().inputPosition = transform.position;
+        entity.Get<InputComponent>().inputPosition = transform.position;
     }
 
     private void SetEntity()
