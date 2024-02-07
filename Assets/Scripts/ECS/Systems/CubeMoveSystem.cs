@@ -17,8 +17,9 @@ sealed class CubeMoveSystem : IEcsRunSystem
             {
                 ref var cube = ref _cubeFilter.Get1(j);
 
-                cube.transform.position = new Vector3(input.inputPosition.x, cube.transform.position.y, input.inputPosition.z);
-
+                var targetPosition = new Vector3(input.inputPosition.x, cube.transform.position.y, input.inputPosition.z);
+                cube.transform.position = Vector3.MoveTowards(cube.transform.position, targetPosition, Time.deltaTime);
+                
                 foreach (var plane in cube.accessiblePlanes)
                 {
                     if (plane.gameObject.TryGetComponent(out PlaneView planeView))
@@ -26,6 +27,9 @@ sealed class CubeMoveSystem : IEcsRunSystem
                         planeView.entity.Del<IsAccessiblePlane>();
                     }
                 }
+
+                if (cube.transform.position != targetPosition)
+                    return;
             }
             
             entity.Del<InputComponent>();
