@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6d97864e7fd0b844b4c88e9b57ee17c, type: 3}
-  m_Name: CubeData
+  m_Name: Cube Data
   m_EditorClassIdentifier: 
   cubePrefab: {fileID: 4842729329031284615, guid: fda130f33a9564242980e7f4bb960b33, type: 3}
   cubeSpeed: 2
