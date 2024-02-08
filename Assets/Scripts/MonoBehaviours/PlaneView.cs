@@ -2,7 +2,7 @@ using Leopotam.Ecs;
 using UnityEngine;
 
 public class PlaneView : MonoBehaviour
-{
+{ 
     public EcsEntity entity;
 
     private void Start()
@@ -11,7 +11,7 @@ public class PlaneView : MonoBehaviour
     }
 
     private void OnMouseDown()
-    {
+    {    
         entity.Get<InputComponent>().inputPosition = transform.position;
     }
 

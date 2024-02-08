@@ -1,5 +1,6 @@
 using Leopotam.Ecs;
 using UnityEngine;
+
 sealed class CoinsAmountViewInitSystem : IEcsInitSystem
 {
     private readonly EcsFilter<ResourcesFeatureComponent> _featureFilter = null;
