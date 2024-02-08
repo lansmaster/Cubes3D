@@ -4,6 +4,7 @@ using UnityEngine;
 sealed class PlanesDetectorSystem : IEcsRunSystem
 {
     private readonly EcsFilter<CubeDataComponent, IsActiveCube> _activeCubeFilter = null;
+
     private readonly EcsFilter<CubeDataComponent>.Exclude<IsActiveCube> _notActiveCubeFilter = null;
 
     public void Run()

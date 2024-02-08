@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5232976029445710614}
   - component: {fileID: 3481423928932653383}
   - component: {fileID: 477756113196495158}
+  - component: {fileID: 2835909486138942147}
   m_Layer: 0
   m_Name: GoldCoin
   m_TagString: Untagged
@@ -27,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8782748995909848057}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 1, y: -0.5, z: 1}
   m_LocalScale: {x: 80, y: 80, z: 80}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: -90, y: 79.200005, z: 0}
 --- !u!33 &7709706533952901211
 MeshFilter:
@@ -122,3 +123,15 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &2835909486138942147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8782748995909848057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099ad981c6709654eb328f66a15f1457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

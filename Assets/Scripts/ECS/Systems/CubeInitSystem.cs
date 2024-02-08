@@ -1,11 +1,11 @@
-using UnityEngine;
 using Leopotam.Ecs;
+using UnityEngine;
 
 sealed class CubeInitSystem : IEcsInitSystem
 {
-    private EcsWorld _world = null;
-    private StaticData staticData;
-    private SceneData sceneData;
+    private readonly EcsWorld _world = null;
+    private readonly StaticData staticData;
+    private readonly SceneData sceneData;
 
     public void Init()
     {

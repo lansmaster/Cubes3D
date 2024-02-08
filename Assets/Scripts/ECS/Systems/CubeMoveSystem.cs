@@ -4,6 +4,7 @@ using UnityEngine;
 sealed class CubeMoveSystem : IEcsRunSystem
 {
     private readonly EcsFilter<InputComponent, IsAccessiblePlane> _inputFilter = null;
+
     private readonly EcsFilter<CubeDataComponent, IsActiveCube> _cubeFilter = null;
 
     public void Run()

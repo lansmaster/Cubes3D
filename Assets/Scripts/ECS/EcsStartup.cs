@@ -18,7 +18,10 @@ public sealed class EcsStartup : MonoBehaviour
 
         AddSystems();
         AddInjections();
+    }
 
+    private void Start()
+    {
         updateSystems.Init();
         fixedUpdateSystems.Init();
     }
@@ -34,10 +37,14 @@ public sealed class EcsStartup : MonoBehaviour
     {
         updateSystems.
             Add(new CubeInitSystem()).
+            Add(new CoinInitSystem()).
             Add(new PlanesDetectorSystem()).
             Add(new PlaneColorSystem()).
-            Add(new CubeMoveSystem()).
-            Add(new CoinSpawnSystem());
+            Add(new CoinSpawnSystem()).
+            Add(new CoinsAmountViewInitSystem());
+
+        fixedUpdateSystems.
+            Add(new CubeMoveSystem());
     }
 
     private void Update()

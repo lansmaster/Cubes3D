@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='utf-8' standalone='yes' ?>
-<map>
-    <int name="coins" value="100" />
-    <int name="health" value="50" />
-</map>
+<resources>
+	<resource name ="Coin">
+		<amount>5</amount>
+	</resource>
+</resources>
