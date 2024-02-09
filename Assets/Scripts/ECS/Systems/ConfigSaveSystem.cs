@@ -1,6 +1,8 @@
 using Leopotam.Ecs;
+using System.IO;
 using System.Linq;
 using System.Xml.Linq;
+using UnityEngine;
 
 sealed class ConfigSaveSystem : IEcsDestroySystem
 {
@@ -10,9 +12,14 @@ sealed class ConfigSaveSystem : IEcsDestroySystem
 
     public void Destroy()
     {
-        // получить путь к файлу
+        string path = Application.streamingAssetsPath + "/" + _fileName;
 
-        XDocument xDoc = XDocument.Load(_fileName);
+        if (!File.Exists(path))
+        {
+            throw new FileNotFoundException(path);
+        }
+
+        XDocument xDoc = XDocument.Load(path);
 
         foreach (var i in _featureFilter)
         {
@@ -26,7 +33,7 @@ sealed class ConfigSaveSystem : IEcsDestroySystem
                 if (amount != null)
                     amount.Value = feature.resourcesFeature.GetResourceValueString(ResourceType.Coin);
 
-                xDoc.Save(_fileName);
+                xDoc.Save(path);
             }
         }
     }
