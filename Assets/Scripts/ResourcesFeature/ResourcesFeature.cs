@@ -4,7 +4,7 @@ using System.Linq;
 
 public class ResourcesFeature
 {
-    public readonly Dictionary<ResourceType, ResourceInteger> _resources;
+    private readonly Dictionary<ResourceType, ResourceInteger> _resources;
 
     public event Action<ResourceType, int, int> ResourceChanged;
 

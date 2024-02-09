@@ -40,6 +40,7 @@ public sealed class EcsStartup : MonoBehaviour
             Add(new CoinInitSystem()).
             Add(new PlanesDetectorSystem()).
             Add(new PlaneColorSystem()).
+            Add(new InputSystem()).
             Add(new CoinSpawnSystem()).
             Add(new CoinsAmountViewInitSystem());
 

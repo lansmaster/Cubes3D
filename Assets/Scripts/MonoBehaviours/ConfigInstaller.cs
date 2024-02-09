@@ -7,7 +7,7 @@ using Leopotam.Ecs;
 
 public class ConfigInstaller : MonoBehaviour
 {
-    private string _fileName = "conf.xml";
+    private const string _fileName = "conf.xml";
     private List<ResourceInteger> _resources = new List<ResourceInteger>();
     private ResourcesFeature _resourcesFeature;
 
