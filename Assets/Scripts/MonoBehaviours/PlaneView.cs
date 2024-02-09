@@ -12,6 +12,7 @@ public class PlaneView : MonoBehaviour
 
     private void OnMouseDown()
     {    
+        // нужна проверка 
         entity.Get<InputComponent>().inputPosition = transform.position;
     }
 
